@@ -1,0 +1,24 @@
+# Python & Virtual Environments
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+
+# PyTorch & Local Caches
+.pytest_cache/
+temp_mel.png
+
+# React & Vite Frontend
+respiflow-ui/node_modules/
+respiflow-ui/dist/
+respiflow-ui/.env
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Datasets & Large Files
+data/
+
+*.pth

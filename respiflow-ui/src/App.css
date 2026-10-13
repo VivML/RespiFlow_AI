@@ -1,0 +1,195 @@
+:root {
+  --bg-dark: #0b0f19;
+  --card-dark: #151b2b;
+  --accent-blue: #2563eb;
+  --safe-green: #10b981;
+  --danger-red: #ef4444;
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  min-height: 100vh;
+}
+
+.dashboard {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  color: var(--accent-blue);
+  margin-bottom: 8px;
+  font-size: 2rem;
+}
+
+.header p {
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.upload-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.upload-card {
+  background-color: var(--card-dark);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid #1e293b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload-card h3 {
+  font-size: 1.1rem;
+  margin: 10px 0 15px 0;
+}
+
+.upload-card input[type="file"] {
+  width: 100%;
+  max-width: 250px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.icon {
+  color: var(--accent-blue);
+}
+
+.success-text {
+  color: var(--safe-green);
+  font-size: 0.85rem;
+  margin-top: 12px;
+}
+
+.action-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 35px;
+}
+
+.analyze-btn {
+  background-color: var(--accent-blue);
+  color: #ffffff;
+  border: none;
+  padding: 14px 36px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.analyze-btn:hover {
+  opacity: 0.9;
+}
+
+.analyze-btn:active {
+  transform: scale(0.98);
+}
+
+.analyze-btn:disabled {
+  background-color: #334155;
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+.error-banner {
+  background-color: rgba(239, 68, 68, 0.12);
+  color: var(--danger-red);
+  padding: 14px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 25px;
+  border: 1px solid var(--danger-red);
+}
+
+.results-container {
+  animation: fadeIn 0.4s ease-out;
+}
+
+.diagnosis-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+}
+
+.diagnosis-banner h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.diagnosis-banner .confidence {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-left: 10px;
+}
+
+.diagnosis-banner.safe {
+  background-color: rgba(16, 185, 129, 0.12);
+  border: 1px solid var(--safe-green);
+  color: var(--safe-green);
+}
+
+.diagnosis-banner.danger {
+  background-color: rgba(239, 68, 68, 0.12);
+  border: 1px solid var(--danger-red);
+  color: var(--danger-red);
+}
+
+.telemetry-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.telemetry-card {
+  background-color: var(--card-dark);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #1e293b;
+  text-align: center;
+}
+
+.telemetry-card h4 {
+  margin: 0 0 15px 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.telemetry-card img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
