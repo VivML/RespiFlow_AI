@@ -72,7 +72,12 @@ RespiFlow_AI/
 
 ## ⚡ Local Deployment Guide
 
-### 1. Initialize the Backend (FastAPI & PyTorch)
+### 1. Download Model Weights
+To run the diagnostic engine, you must download the pre-trained PyTorch weights. 
+* Download `model_weights.pth` from **[this Google Drive link](https://drive.google.com/file/d/1_sWM6wVuu_MVeLotE2uNsFF1GYUHdIH-/view?usp=sharing)**.
+* Place the file inside the `src/` directory.
+
+### 2. Initialize the Backend (FastAPI & PyTorch)
 Navigate to the root directory and start the FastAPI server. This will expose the REST API on port `8000`.
 
 ```bash
@@ -81,23 +86,6 @@ pip install fastapi uvicorn torch torchvision torchaudio librosa opencv-python p
 
 # Launch the inference server
 uvicorn src.api:app --reload --host 0.0.0.0 --port 8000
-```
-
-### 2. Initialize the Frontend (React & Vite)
-Open a new terminal window, navigate to the UI workspace, and start the Vite development server.
-
-```bash
-# Navigate to the React workspace
-cd respiflow-ui
-
-# Install Node modules and icons
-npm install
-npm install lucide-react
-
-# Launch the client dashboard
-npm run dev
-```
-Access the clinical workstation in your browser at `http://localhost:5173`.
 
 ## 📡 REST API Specification
 
